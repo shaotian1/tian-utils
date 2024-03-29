@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <button id="start">start</button>
+        <div id="content"></div>
+    </div>
+    <script type="module">
+        import {Scheduler} from '../../dist/esm/index.js';
+
+        const start = document.getElementById('start');
+        const content = document.getElementById('content');
+        const taskArray = [500, 3000, 500, 2000, 4500];
+        const scheduler = new Scheduler(2);
+        let index = 1;
+
+        const createPromise = (fn, delay) => {
+            return () => new Promise(resolve => {
+                setTimeout(() => {
+                    const text = fn();
+                    content.innerHTML += `<div>${index}、${text}</div>`;
+                    index++;
+                    resolve();
+                }, delay)
+            })
+        }
+
+        function addFn() {
+            taskArray.forEach(delay => {
+                scheduler.addTask(createPromise(
+                    () => 'done: ' + delay + 'ms的延迟的任务',
+                    delay
+                ))
+            });
+        }
+
+        start.onclick = function startScheduler() {
+            index = 1;
+            content.innerHTML = '';
+            addFn();
+            scheduler.start();
+        }
+        
+    </script>
+</body>
+</html>

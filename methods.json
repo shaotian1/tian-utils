@@ -1,0 +1,9 @@
+{
+    "chunk": true,
+    "pipe": true,
+    "scheduler": true,
+    "debounce": true,
+    "throttle": true,
+    "cloneDeep": true,
+    "process": true
+}
