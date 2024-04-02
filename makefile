@@ -25,3 +25,6 @@ clone:
 
 process:
 	ts-node /Users/v_zhangshaotian/Desktop/study/tian-utils/src/process/index.ts
+
+strings:
+	ts-node /Users/v_zhangshaotian/Desktop/study/tian-utils/src/strings/index.ts

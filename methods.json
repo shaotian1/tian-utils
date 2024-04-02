@@ -5,5 +5,7 @@
     "debounce": true,
     "throttle": true,
     "cloneDeep": true,
-    "process": true
+    "process": true,
+    "strings": true,
+    "isJson": true
 }
