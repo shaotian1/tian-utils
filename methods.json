@@ -4,8 +4,9 @@
     "scheduler": true,
     "debounce": true,
     "throttle": true,
-    "cloneDeep": true,
+    "clone": true,
     "process": true,
     "strings": true,
-    "isJson": true
+    "isJson": true,
+    "enum": true
 }

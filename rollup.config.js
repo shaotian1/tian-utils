@@ -29,6 +29,7 @@ module.exports = defineConfig([
                 name: pkg.name,
                 format: 'umd',
                 dir: 'dist/umd',
+                plugins: [terser()],
                 // preserveModules: true, // 保留模块结构
             }
         ],
@@ -36,11 +37,12 @@ module.exports = defineConfig([
             typescript(),
 
             // 处理外部依赖
-            resolve({extensions: ['.js', '.ts']}),
+            resolve(),
 
             babel({
                 exclude: "**/node_modules/**",
-                babelHelpers: "bundled",
+                // babelHelpers: "bundled",
+                babelHelpers: "runtime",
                 extensions: ['.js', '.ts']
             }),
 

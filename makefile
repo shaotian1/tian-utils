@@ -1,16 +1,20 @@
 SRC = /Users/v_zhangshaotian/Desktop/study/tian-utils/src
 
+define getUtilsPath
+$(SRC)/$(1)/index.ts
+endef
+
 new:
-	@node bin/templateGenerate.js $(filter-out $@, $(MAKECMDGOALS))
+	@node bin/codeGen/templateGenerate.js $(filter-out $@, $(MAKECMDGOALS))
 
 delete:
 	@node bin/delete.js $(filter-out $@, $(MAKECMDGOALS))
 
 build:
-	npm run gcSrc & npm run build
+	pnpm run gcSrc & pnpm run build
 
 test:
-	node $(SRC)/$(filter-out $@, $(MAKECMDGOALS))/index.js
+	pnpm run test
 
 app:
 	@node express/app.js
@@ -21,10 +25,13 @@ commit:
 
 
 clone:
-	ts-node /Users/v_zhangshaotian/Desktop/study/tian-utils/src/cloneDeep/index.ts
+	ts-node $(call getUtilsPath,clone)
 
 process:
-	ts-node /Users/v_zhangshaotian/Desktop/study/tian-utils/src/process/index.ts
+	ts-node $(call getUtilsPath,process)
 
 strings:
-	ts-node /Users/v_zhangshaotian/Desktop/study/tian-utils/src/strings/index.ts
+	ts-node $(call getUtilsPath,strings)
+
+enum:
+	ts-node $(call getUtilsPath,enum)

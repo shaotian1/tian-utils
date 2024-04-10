@@ -1,26 +1,34 @@
 {
     "compilerOptions": {
-      "allowJs": true,
-      "allowSyntheticDefaultImports": true,
-      "declaration": true,
-      "declarationDir": "dts",
-      "downlevelIteration": true,
-      "esModuleInterop": true,
-      "forceConsistentCasingInFileNames": true,
-      "isolatedModules": true,
-      "lib": ["dom", "dom.iterable", "esnext"],
-      "module": "esnext",
-      "moduleResolution": "node",
-      "noEmit": true,
-      "noFallthroughCasesInSwitch": true,
-      "noImplicitAny": true,
-      "resolveJsonModule": true,
-      "skipLibCheck": true,
-      "sourceMap": true,
-      "strict": true,
-      "target": "es5",
-      "strictFunctionTypes": true,
-      "noImplicitThis": false
+        "allowJs": true,
+        "allowSyntheticDefaultImports": true,
+        "declaration": true, // 生成.d.ts文件
+        "declarationDir": "dts",
+        "downlevelIteration": true,
+        "esModuleInterop": true,
+        "forceConsistentCasingInFileNames": true,
+        "isolatedModules": true,
+        "lib": ["dom", "dom.iterable", "esnext"],
+        "module": "esnext",
+        "moduleResolution": "node",
+        "noEmit": true,
+        "noFallthroughCasesInSwitch": true,
+        "noImplicitAny": true, // 当在表达式和声明上有隐含的any时报错
+        "resolveJsonModule": true,
+        "skipLibCheck": true,
+        "sourceMap": true,
+        "strict": true,
+        "target": "es5",
+        "strictFunctionTypes": true,
+        "noImplicitThis": false,
+
+        "noUnusedLocals": true, // 当有未使用的变量时，抛出错误
+        "noUnusedParameters": true, // 当有未使用的参数时，抛出错误
+        "suppressImplicitAnyIndexErrors": true, // 阻止 --noImplicitAny对缺少索引签名的索引对象报错。
+
+        "removeComments": true, // 删除注释
+
+        "ignoreDeprecations": "5.0"
     },
     "include": ["./src/*"],
     "exclude": ["node_modules", "./example", "./dist"]
