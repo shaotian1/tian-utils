@@ -16,21 +16,21 @@ module.exports = defineConfig([
                 name: pkg.name,
                 format: 'es',
                 dir: 'dist/esm',
-                preserveModules: true, // 保留模块结构
-                // preserveModulesRoot: "src", // 将保留的模块放在根级别的此路径下
+                preserveModules: true,
+                sourcemap: true
             },
             // {
             //     name: pkg.name,
             //     format: 'cjs',
             //     dir: 'dist/cjs',
             //     preserveModules: true, // 保留模块结构
+            //     preserveModulesRoot: "src", // 将保留的模块放在根级别的此路径下
             // },
             {
                 name: pkg.name,
                 format: 'umd',
                 dir: 'dist/umd',
-                plugins: [terser()],
-                // preserveModules: true, // 保留模块结构
+                plugins: [terser()]
             }
         ],
         plugins: [

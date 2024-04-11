@@ -5,13 +5,15 @@ node_modules
 src
 makefile
 methods.json
-tsconfig.json
-rollup.config.json
 
-.babelrc
+babel.config.js
+jest.config.js
+rollup.config.json
+tsconfig.json
+
 .gitignore
 .npmignore
-.package-lock.json
+.pnpm-lock.yaml
 
 .DS_Store
 .vscode
