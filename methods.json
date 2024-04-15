@@ -11,5 +11,6 @@
     "enum": true,
     "copy": true,
     "pick": true,
-    "regular": true
+    "regular": true,
+    "cache": true
 }
