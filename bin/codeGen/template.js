@@ -18,7 +18,7 @@ exports.getFileDirMaps = fncName => ([
         template: getMethodTemplate(fncName)
     },
     {
-        path: getOutputPath(fncName + 'index.test.ts'),
+        path: getOutputPath(fncName + '/index.test.ts'),
         template: PUBLIC_GEN_TIP
     }
 ]);

@@ -8,5 +8,8 @@
     "process": true,
     "strings": true,
     "isJson": true,
-    "enum": true
+    "enum": true,
+    "copy": true,
+    "pick": true,
+    "regular": true
 }

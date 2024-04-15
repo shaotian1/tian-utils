@@ -35,3 +35,6 @@ strings:
 
 enum:
 	ts-node $(call getUtilsPath,enum)
+
+decorator:
+	ts-node $(call getUtilsPath,decorator)

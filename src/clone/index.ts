@@ -32,7 +32,10 @@ export function cloneDeep(target: any, map: TMap = new WeakMap()): ReturnType<ty
         case ReferenceType.Set:
             return cloneSet(target, map, cloneDeep);
 
-        case ReferenceType.Object || ReferenceType.Array:
+        case ReferenceType.Array:
+            return cloneObject(target, type, map, cloneDeep);
+        
+        case ReferenceType.Object:
             return cloneObject(target, type, map, cloneDeep);
 
         default:
@@ -45,8 +48,12 @@ export function clone(target: any, map: TMap = new WeakMap()): ReturnType<typeof
     if (type in BasicType) return target;
 
     switch (type) {
-        case ReferenceType.Object || ReferenceType.Array:
+        case ReferenceType.Array:
             return cloneObject(target, type, map, clone, 'shallow');
+        
+        case ReferenceType.Object:
+            return cloneObject(target, type, map, clone, 'shallow');
+
         default:
             return target;
     }

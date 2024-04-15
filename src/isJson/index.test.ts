@@ -9,6 +9,7 @@ describe('isJson method is ok', () => {
     });
 
     it('should return parse result', () => {
+        expect(isJson(json)).toBeTruthy();
         expect(isJson(json)).toEqual(obj);
     });
 });

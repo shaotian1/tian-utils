@@ -10,16 +10,18 @@
     <button id="pause">pause</button>
     <button id="restart">restart</button>
     <button id="startAt">startAt-2</button>
+    <button id="copy">copy</button>
     <div id="content"></div>
 
     <script type="module">
-        import {ProcessTask} from '../../dist/esm/index.js';
+        import {ProcessTask, copy} from '../../dist/esm/index.js';
 
         const start = document.getElementById('start');
         const pause = document.getElementById('pause');
         const restart = document.getElementById('restart');
         const startAt = document.getElementById('startAt');
         const content = document.getElementById('content');
+        const copyBtn = document.getElementById('copy');
         const taskArray = [500, 1000, 1500, 2000, 2500];
         const list = [];
         let index = 1;
@@ -80,6 +82,12 @@
                 console.log('startAt: ', res);
             })
         };
+
+        copyBtn.onclick = () => {
+            copy('copy seccess !').then(res => {
+                alert(res);
+            });
+        }
     </script>
 </body>
 </html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="debounce">debounce</button>
+    <button id="throttle">throttle</button>
+    <div id="content"></div>
+    <script type="module">
+        import {ProcessTask, copy} from '../../dist/esm/index.js';
+
+        const debounce = document.querySelector('#debounce');
+        const throttle = document.querySelector('#throttle');
+        const content = document.querySelector('#content');
+
+        function contentDisplay(text) {
+            content.innerHTML = text;
+        }
+
+        debounce.onclick = () => {
+            contentDisplay(Date.now());
+        }
+
+        throttle.onclick = () => {
+            contentDisplay(Date.now());
+        }
+        
+    </script>
+</body>
+</html>

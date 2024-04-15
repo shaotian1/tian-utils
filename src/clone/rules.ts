@@ -82,9 +82,11 @@ export function cloneObject(target: TObjectTarget, type: TObjectTypeString, map:
     const result = type === 'Object' ? {} : [];
 
     for (let key in target) {
-        const originValue = Reflect.get(target, key);
-        const copyValue = shallow ? originValue : originFn(originValue, map)
-        hasOwnProperty(target, key) && Reflect.set(result, key, copyValue);
+        if (hasOwnProperty(target, key)) {
+            const originValue = Reflect.get(target, key);
+            const copyValue = shallow ? originValue : originFn(originValue, map)
+            Reflect.set(result, key, copyValue);
+        }
     }
     map?.set(target, result);
     return result;

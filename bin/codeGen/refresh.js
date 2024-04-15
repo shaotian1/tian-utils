@@ -12,7 +12,7 @@ const src_path = path.join(__dirname, '../../src');
 // 读取src目录
 const files = fs.readdirSync(src_path);
 
-function refeshFileTip(path) {
+function refreshFileTip(path) {
     const targetFiles = fs.readdirSync(path);
     targetFiles.forEach(fileArr => {
         if (fileArr.includes(TARGET_FILE_NAME)) {
@@ -33,6 +33,6 @@ files.forEach(item => {
     // 判断是否是文件夹
     const isDir = fs.statSync(path.join(src_path, item)).isDirectory();
     if (isDir && item !== 'utils') {
-        refeshFileTip(path.join(src_path, item))
+        refreshFileTip(path.join(src_path, item))
     }
 });

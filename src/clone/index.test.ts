@@ -9,7 +9,7 @@ describe('clone methods are ok', () => {
         e: Date.now(),
         f: /eea/,
         g: {tt: 1, xx: 0},
-        h: ['cc', {ww: 1}, [2, 4], [{vv: 1}]],
+        h: ['cc', {ww: 1}, [2, 4], [{vv: 1}, 6]],
         i: document.createElement('div')
     }
     const copyObj = clone(obj);
@@ -23,6 +23,8 @@ describe('clone methods are ok', () => {
     it('modify obj', () => {
         // @ts-ignore
         obj.g.new = 3;
+        // @ts-ignore
+        obj.h[4] = 999;
         expect(copyObj.g.new).toBe(3);
         expect(copyDeepObj).not.toEqual(obj);
         expect(copyDeepObj.g.new).toBeUndefined();
