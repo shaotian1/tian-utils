@@ -12,5 +12,6 @@
     "copy": true,
     "pick": true,
     "regular": true,
-    "cache": true
+    "cache": true,
+    "color": true
 }

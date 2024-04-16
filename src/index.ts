@@ -2,6 +2,7 @@
 export * from './cache';
 export * from './chunk';
 export * from './clone';
+export * from './color';
 export * from './copy';
 export * from './debounce';
 export * from './enum';
