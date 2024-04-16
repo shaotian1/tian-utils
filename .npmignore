@@ -1,19 +1,22 @@
+.DS_Store
+.vscode
+
 bin
+# dist
 example
 express
 node_modules
 src
-makefile
-methods.json
-
-babel.config.js
-jest.config.js
-rollup.config.json
-tsconfig.json
 
 .gitignore
 .npmignore
-.pnpm-lock.yaml
 
-.DS_Store
-.vscode
+babel.config.js
+jest.config.js
+makefile
+methods.json
+# package.json
+pnpm-lock.yaml
+# README.md
+rollup.config.js
+tsconfig.json
