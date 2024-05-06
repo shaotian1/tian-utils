@@ -13,5 +13,6 @@
     "pick": true,
     "regular": true,
     "cache": true,
-    "color": true
+    "color": true,
+    "random": true
 }

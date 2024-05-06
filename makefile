@@ -5,13 +5,13 @@ $(SRC)/$(1)/index.ts
 endef
 
 new:
-	@node bin/codeGen/templateGenerate.js $(filter-out $@, $(MAKECMDGOALS))
+	@node bin/codeGen/templateGenerate.js $(filter-out $@, $(MAKECMDGOALS)) & node bin/codeGen/exportGenerate.js $(filter-out $@, $(MAKECMDGOALS))
 
 delete:
-	@node bin/delete.js $(filter-out $@, $(MAKECMDGOALS))
+	@node bin/codeGen/delete.js $(filter-out $@, $(MAKECMDGOALS))
 
 build:
-	pnpm run gcSrc & pnpm run build
+	pnpm run build
 
 test:
 	pnpm run test

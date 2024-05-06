@@ -3,7 +3,7 @@ type RgbaColorMatch = [string, string, string, string | undefined];
 const rgbItem = (val: string) => parseInt(val).toString(16).padStart(2, '0');
 
 // 将 RGBA 颜色转换为 16 进制颜色
-export function rgbaToHex(rgbaColor: string) {
+export function rgba2Hex(rgbaColor: string) {
     const [r, g, b, a = '1'] = rgbaColor.match(/\d+/g) as RgbaColorMatch;
     const color = [r, g, b].map(rgbItem).join('');
     const alpha = Math.round(parseFloat(a) * 255).toString(16).padStart(2, '0');
@@ -11,7 +11,7 @@ export function rgbaToHex(rgbaColor: string) {
 }
 
 // 将 16 进制颜色转换为 RGBA 颜色
-export function hexToRgba(hexColor: string) {
+export function hex2Rgba(hexColor: string) {
     const rgba: any[] = [];
     rgba.push(parseInt(hexColor.substring(1, 3), 16));
     rgba.push(parseInt(hexColor.substring(3, 5), 16));
