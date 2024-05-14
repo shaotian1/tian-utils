@@ -9,7 +9,19 @@ function getMethodTemplate(fncName) {
 export function ${fncName}() {
 
 }
-`
+`;
+}
+
+function getTestTempate(fncName) {
+    return `${PUBLIC_GEN_TIP}
+import {${fncName}} from '../index';
+
+describe('${fncName} is ok', () => {
+    it('', () => {
+        
+    });
+});
+`;
 }
 
 exports.getFileDirMaps = fncName => ([
@@ -19,7 +31,7 @@ exports.getFileDirMaps = fncName => ([
     },
     {
         path: getOutputPath(fncName + '/index.test.ts'),
-        template: PUBLIC_GEN_TIP
+        template: getTestTempate(fncName)
     }
 ]);
 
