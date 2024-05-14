@@ -14,5 +14,6 @@
     "regular": true,
     "cache": true,
     "color": true,
-    "random": true
+    "random": true,
+    "convertSize": true
 }
