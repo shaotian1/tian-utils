@@ -15,10 +15,8 @@ export class Scheduler implements TScheduler {
         this.maxLimit = maxLimit;
     }
 
-    addTask(task: Task) {
-        if (typeof task === 'function') {
-            this.taskList.push(task);
-        }
+    addTask(...tasks: TaskList) {
+        this.taskList.push(...tasks);
     }
 
     start() {
