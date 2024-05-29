@@ -1,4 +1,4 @@
-import {Scheduler, chunk} from '../../dist/umd'
+import {Scheduler, chunk} from '../../../dist/umd'
 
 const createPromise = (fn, delay) => {
     return () => new Promise(resolve => {

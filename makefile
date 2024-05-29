@@ -5,7 +5,7 @@ $(SRC)/$(1)/index.ts
 endef
 
 new:
-	@node bin/codeGen/templateGenerate.js $(filter-out $@, $(MAKECMDGOALS)) & node bin/codeGen/exportGenerate.js $(filter-out $@, $(MAKECMDGOALS))
+	@node bin/codeGen/templateGenerate.js $(filter-out $@, $(MAKECMDGOALS))
 
 delete:
 	@node bin/codeGen/delete.js $(filter-out $@, $(MAKECMDGOALS))
@@ -17,7 +17,9 @@ test:
 	pnpm run test
 
 app:
-	@node express/app.js
+	pnpm run app
+
+
 
 commit:
 	git commit -m '$(filter-out $@, $(MAKECMDGOALS))'

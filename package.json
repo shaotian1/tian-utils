@@ -8,9 +8,10 @@
     "es"
   ],
   "scripts": {
-    "gcSrc": "node bin/codeGen/exportGenerate.js",
+    "test": "jest",
     "build": "rimraf dist & rollup -c rollup.config.js",
-    "test": "jest"
+    "generate:example": "node bin/example/generate.js",
+    "app": "pnpm run generate:example & node express/app.js"
   },
   "keywords": [],
   "author": "",

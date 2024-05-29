@@ -22,8 +22,7 @@ isExistMethod(fncName)
 
         // 更新methods.json
         fileSaver(resolve(__dirname, '../../methods.json'))
-            .write(JSON.stringify(methodsMaps, null, 4), 'utf-8')
-            .end('\n');
+            .write(JSON.stringify(methodsMaps, null, 4), 'utf-8');
 
         // 根据预设模版生成文件
         FILE_DIR_MAPS.forEach(fileConfig => {
